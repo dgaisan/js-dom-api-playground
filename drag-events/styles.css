@@ -1,0 +1,21 @@
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.draggableArea {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropZone {
+    border: 1px solid #cecece;
+    margin: 5px;
+    min-height: 50px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.dropZone span {
+    text-shadow: #cecece;
+}

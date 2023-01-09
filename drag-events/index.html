@@ -4,16 +4,31 @@
     <title>Draggable Events</title>
 </head>
 <script src='script.js' defer></script>
+<link rel="stylesheet" href="styles.css">
 
 <body>
     <div class='root'>
+        <div class="draggableArea">
 
-        <p id='p1' draggable='true'>
-            This element is draggable.
-        </p>
+            <div class='dropZone'>
+                <span>Drop Zone</span>
 
-        <div id='target'>
-            Drop Zone
+                <p id='elem1' draggable='true' class='draggableElement'>
+                    This element is draggable.
+                </p>
+
+                <p id='elem2' draggable='true' class='draggableElement'>
+                    This element is draggable.
+                </p>
+            </div>
+
+            <div class='dropZone'>
+                Drop Zone
+            </div>
+        </div>
+        <div class="statusBar" id='statusBar'>
+            Status Bar
+            <p class="status"></p>
         </div>
     </div>
 </body>

@@ -1,12 +1,21 @@
 window.addEventListener('DOMContentLoaded', domContentLoaded);
 
-function domContentLoaded() {
-  const draggableElement = document.getElementById('p1');
-  const dropArea = document.getElementById('target');
+let statusElement;
 
-  draggableElement.addEventListener('dragstart', handleDragStart);
-  dropArea.addEventListener('dragover', handleDragover);
-  dropArea.addEventListener('drop', handleDrop);
+function domContentLoaded() {
+  const draggableElements = document.querySelectorAll('.draggableElement');
+  const dropAreas = document.querySelectorAll('.dropZone');
+
+  statusElement = document.querySelector('#statusBar .status');
+
+  draggableElements.forEach((element) => {
+    element.addEventListener('dragstart', handleDragStart);
+  });
+
+  dropAreas.forEach((area) => {
+    area.addEventListener('dragover', handleDragover);
+    area.addEventListener('drop', handleDrop);
+  });
 }
 
 function handleDragStart(event) {
@@ -17,14 +26,15 @@ function handleDragStart(event) {
 }
 
 function handleDragover(event) {
-    console.info('handleDragover...');
   event.preventDefault();
+  
   event.dataTransfer.dropEffect = 'move';
+  statusElement.innerText = 'An element is being dragged...';
 }
 function handleDrop(event) {
   event.preventDefault();
-  console.info('handleDrop...');
-  
+
   const data = event.dataTransfer.getData('application/my-app');
   event.target.appendChild(document.getElementById(data));
+  statusElement.innerText = '';
 }
