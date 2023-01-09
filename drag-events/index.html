@@ -10,7 +10,7 @@
     <div class='root'>
         <div class="draggableArea">
 
-            <div class='dropZone'>
+            <div class='dropZone dropArea'>
                 <span>Drop Zone</span>
 
                 <p id='elem1' draggable='true' class='draggableElement'>
@@ -22,8 +22,16 @@
                 </p>
             </div>
 
-            <div class='dropZone'>
+            <div class='dropZone dropArea'>
                 Drop Zone
+            </div>
+
+            <div class="fileArea dropArea">
+                <form class="upload-form">
+                    <p>Upload multiple images</p>
+                    <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                </form>
+                <div class="imagePreview"></div>
             </div>
         </div>
         <div class="statusBar" id='statusBar'>

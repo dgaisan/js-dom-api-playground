@@ -8,14 +8,25 @@
     flex-direction: row;
 }
 
-.dropZone {
+.dropArea {
     border: 1px solid #cecece;
+    border-radius: 10px;
     margin: 5px;
-    min-height: 50px;
+    min-height: 250px;
     min-width: 200px;
     text-align: center;
 }
 
+.obj {
+    max-width: 100px;
+    max-height: 75px;
+}
+
 .dropZone span {
     text-shadow: #cecece;
+}
+
+.imagePreview {
+    max-width: 100px;
+    max-height: 75px;
 }
