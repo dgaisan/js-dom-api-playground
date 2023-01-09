@@ -68,9 +68,9 @@ function handleFiles(files) {
     }
 
     const img = document.createElement("img");
-    img.classList.add("obj");
+    img.classList.add("thumb");
     img.file = file;
-    imagePreviewElement.appendChild(img); // Assuming that 'preview' is the div output where the content will be displayed.
+    imagePreviewElement.appendChild(img);
 
     const reader = new FileReader();
     reader.onload = (e) => {
